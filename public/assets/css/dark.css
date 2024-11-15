@@ -1,0 +1,85 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#notes {
+    background-color: #272621;
+    color: #ffffff;
+}
+  .countdown-container {
+      background-color: black;
+  }
+
+  #contact {
+      background-color: #272621;
+  }
+
+  .contact-container {
+      background-color: #272621;
+      color: #ffffff;
+  }
+
+  .contact-container h1,
+  .contact-info p,
+  .contact-info strong {
+      color: #ffffff;
+  }
+
+  .form-group {
+      border-bottom: 1px solid #444;
+  }
+
+  .form-group input {
+      color: #ffffff;
+  }
+.notes-container {
+    background-color: #272621;
+}
+
+.notes-header h1,
+.info-item h2,
+.info-item p {
+    color: #ffffff;
+}
+  header .wave-shape {
+      content: url('../images/shape-top-black-80.png') !important;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: auto;
+      z-index: 1;
+      display: block;
+  }
+  #countdown .wave-shape-bottom {
+      content: url('../images/shape-top-dark-grey-80.png');
+      width: 100%;
+      display: block;
+      margin-bottom: -1px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+  }
+  #location .mapimage {
+      content: url('../images/shape-top-dark-grey-80.png') !important;
+      width: 100%;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      z-index: 2;
+      margin-bottom: -1px;
+  }
+  .theme-switch {
+      background: transparent !important;
+  }
+
+  .theme-switch img {
+      background: transparent !important;
+  }
+
+  #moonIcon,
+  #sunIcon {
+      background: transparent !important;
+  }

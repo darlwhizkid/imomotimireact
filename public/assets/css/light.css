@@ -1,0 +1,11 @@
+body{
+    background-color: #ffffff;
+    color: black;
+}
+
+#navbar button i {
+    color: rgb(14, 4, 4);
+    width:  20px;
+    height: 20px;
+
+}

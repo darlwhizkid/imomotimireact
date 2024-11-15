@@ -1,0 +1,36 @@
+.light {
+    --primary-color: #ffffff;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --section-bg: #f5f5f5;
+    --border-color: #e0e0e0;
+}
+
+.light body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.light section {
+    background-color: var(--section-bg);
+}
+
+#navbar button i {
+    color: rgb(14, 4, 4);
+    width:  20px;
+    height: 20px;
+
+}
+
+.sticky-header {
+  transition: background-color 0.3s ease;
+}
+
+.sticky-header.scrolled {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark-mode .sticky-header.scrolled {
+  background-color: #333333;
+}

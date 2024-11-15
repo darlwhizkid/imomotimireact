@@ -1,0 +1,30 @@
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.top-bar.scrolled {
+  background-color: #000000 !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    position: relative;
+  }
+}
+
+

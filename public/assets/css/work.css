@@ -1,0 +1,768 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}/* for the whole header */
+header {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.header-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.zoom-effect {
+    animation: zoomEffect 5s linear forwards;
+}
+
+.carousel-fade{
+    animation: fadeAnimation 20s infinite;
+}
+/* For the carousel navigation */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.carousel-nav:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.carousel-nav i {
+    color: white;
+    font-size: 24px;
+}
+
+.carousel-prev {
+    left: 20px;
+}
+
+.carousel-next {
+    right: 20px;
+}
+
+
+/* for the top bar */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+/* for the logo */
+.logo {
+    width: 4rem;
+    height: 4rem;
+}
+/* for the navigation, links and link hover behaviour */
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 	11px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+/* For the call us button */
+.call-button {
+    background-color: #dc2626;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+/* For the contents of the header */
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 100%;
+}
+/* for the paragraph and header style */
+.subtitle {
+    color: #fbbf24;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-family: 'Permanent Marker', cursive;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+}
+/* For the Download button */
+.download-button {
+    margin-top: 1.5rem;
+    background-color: #dc2626;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+/* Final paragraph of the heading */
+.entry-note {
+    margin-top: 1rem;
+}
+/* For the mouse icon animation */
+.bounce-icon {
+    animation: bounce 2s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* For the wavy white image */
+.wave-shape {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: auto;
+}
+
+/* For the countdown section */
+#countdown {
+    font-family: 'Nunito', sans-serif;
+    margin-top: -1px;
+    background-color: white;
+    position: relative;
+}
+
+.countdown-container {
+    text-align: center;
+    padding: 64px 0;
+}
+
+.countdown-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    gap: 16px;
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.timer-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin-top: 8px;
+}
+
+.timer-separator {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+/* For the wavy bottom shape */
+.wave-shape-bottom {
+    width: 100%;
+    display: block;
+    margin-bottom: -1px;
+}
+
+/* For the notes section */
+#notes {
+    background-color: #f5f5f5;
+    font-family: 'Nunito', sans-serif;
+}
+
+.notes-container {
+    max-width: 72rem;
+    margin: 0;
+    padding: 4rem 1rem;
+    background-color: #f6f4ee;
+}
+
+.notes-content {
+    display: flex;
+    align-items: center; /* Changed from center to flex-start */
+    justify-content: space-between;
+    gap: 1rem; /* Added gap to control spacing */
+    margin: 0 auto;
+    margin-left: 100px;
+    padding-left: 100px;
+}
+.notes-header {
+    width: 40%;
+}
+
+.notes-header h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+    color: #3d2b1f;
+    font-family: 'Nunito', sans-serif;
+}
+
+.notes-info {
+    width: 60%;
+    display: flex;
+    gap: 4rem;
+}
+
+.info-item {
+    text-align: left;
+}
+
+.info-item i {
+    font-size: 2.25rem;
+    color: #ef4444;
+}
+
+.info-item h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3d2b1f;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.info-item p {
+    color: #3d2b1f;
+    margin-top: 0.5rem;
+    text-align: left;
+}
+
+/* For the contact us section */
+#contact {
+    background-color: #f6f4ee;
+    padding: 4rem 0;
+    position: relative;
+    margin-top: -2px;
+}
+
+.contact-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    background-color: #f6f4ee;
+}
+
+.contact-container h1 {
+    font-size: 1.875rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.contact-info {
+    flex: 1;
+    padding-right: 2rem;
+    min-width: 300px;
+    margin-bottom: 1.5rem;
+    margin-top: 25px;
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.contact-info strong {
+    font-weight: bold;
+}
+
+.contact-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex: 2;
+    min-width: 300px;
+    background: transparent;
+    margin-top: -50px;
+}
+
+@media (min-width: 768px) {
+    .contact-form {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d1d5db;
+    padding-bottom: 0.5rem;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group i {
+    margin-right: 0.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    min-height: 50px;
+    resize: vertical;
+}
+.form-group.full-width {
+    height: 100px;  /* Increased height for the full-width form group */
+}
+
+.form-group.full-width input {
+    height: 100%;  /* Makes input fill the container height */
+}
+/* For the form button */
+.contact-button {
+        align-self: flex-start;
+        margin-top: 1rem;
+        background-color: #dc2626;
+        color: white;
+        padding: 1rem 2.5rem;  /* Reduced horizontal padding */
+        border-radius: 0.25rem;
+        border: none;
+        cursor: pointer;
+        width: fit-content;  /* Makes button width match content */
+    
+}
+.contact-button:hover {
+    background-color: #b91c1c;
+}
+
+/* For the footer section */
+footer {
+    text-align: center;
+    padding: 4rem 0;
+    background-color: #190e08;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.social-heading {
+    margin-bottom: 2rem;
+}
+.social-heading h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: white;
+}
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 36px;
+    margin-top: 10px;
+}
+.social-icon i {
+    color: white;
+}
+.social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #666;
+}
+.footer-bottom {
+    border-top: 1px solid #4a4a4a;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-bottom p {
+    font-size: 0.875rem;
+    color: #999;
+}
+/* For the arrow icon */
+#scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 9999;
+}
+#scroll-to-top.rocket {
+    animation: rocketLaunch 1s ease-out;
+}
+@keyframes rocketLaunch {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(-100vh); }
+}
+
+#scroll-to-top:hover {
+    background-color: #600000;
+}
+    #scroll-to-top {
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s, visibility 0.3s;
+        /* Add any other styles you want for the button here */
+    }
+
+    #scroll-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    #scroll-to-top {
+        animation: bounce 2s infinite;
+    }
+
+/* To switch from light to dark mode */
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 15px;
+}
+
+.fa-moon {
+    color: silver;
+    font-size: 1.5rem;
+    background-color: none;
+}
+
+.fa-sun {
+    color: #ffd700;
+    font-size: 1.5rem;
+}
+ /* For mobile responsiveness */
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* Header & Navigation */
+    .top-bar {
+        flex-direction: row;
+        justify-content: flex-start;
+        position: relative;
+    }
+
+    .theme-toggle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1.5rem;
+        margin-left: 1rem; /* Creates more space from the logo */
+    }
+
+    .logo {
+        margin-left: 1rem;
+        margin-right: auto; /* Pushes other elements away */
+    }
+
+    .call-button {
+        display: none;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Header Content */
+        .header-background {
+            transition: none;
+        }
+    
+        .zoom-effect {
+            animation: none;
+        }
+    
+        .carousel-fade {
+            animation: none;
+        }
+    
+    .header-content {
+        padding: 0 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle{
+        display: none;
+    }
+
+    .wave-shape{
+        display: none;
+    }
+
+    /* Hide arrow navigation in mobile */
+    .carousel-prev,
+    .carousel-next {
+        display: none;
+    }
+
+    /* Dot navigation styles */
+    .carousel-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .dot.active {
+        background: white;
+    }
+
+    /* Countdown Section */
+    .countdown-timer {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* Notes Section */
+    .notes-content {
+        flex-direction: column;
+        margin-left: 0;
+        padding-left: 0;
+    }
+
+    .notes-header, 
+    .notes-info {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .notes-info {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .wave-shape-bottom, .mapimage {
+        display: none;
+    }
+
+    /* Contact Section */
+    .contact-container {
+        padding: 1rem;
+    }
+
+    .contact-info,
+    .contact-form {
+        flex: 100%;
+        padding-right: 0;
+    }
+
+    .contact-info{
+        margin-top: -20px;
+    }
+
+    .form-group {
+        grid-column: 1 / -1;
+    }
+
+    /* Footer */
+    .footer-bottom {
+        width: 90%;
+    }
+
+    /* Carousel Navigation */
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carousel-prev {
+        left: 10px;
+    }
+
+    .carousel-next {
+        right: 10px;
+    }
+}
+/* Hamburger Menu Styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        z-index: 100;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        background-color: rgba(0, 0, 0, 0.9);
+        padding-top: 4rem;
+        transition: 0.3s ease;
+    }
+
+    nav.active {
+        right: 0;
+    }
+
+    /* Hamburger Animation */
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+/* Small Mobile Devices */
+@media screen and (max-width: 480px) {
+    .logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .countdown-title {
+        font-size: 1.75rem;
+    }
+
+    .countdown-timer {
+        font-size: 1.5rem;
+    }
+
+    .contact-button {
+        width: 100%;
+        text-align: center;
+    }
+}
