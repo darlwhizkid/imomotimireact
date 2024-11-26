@@ -1,0 +1,8 @@
+/* Light theme styles */
+body {
+  background-color: #ffffff;
+  color: #333333;
+  transition: all 0.3s ease;
+}
+
+/* Keep your existing light theme styles */

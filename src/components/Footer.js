@@ -1,6 +1,11 @@
 import React from 'react';
+import './Footer.css'; // Import the CSS file for styling
 
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer>
       <div className="footer-content">
@@ -17,7 +22,7 @@ const Footer = () => {
           <p>© 2024 Imomotimi Foundation. All Rights Reserved.</p>
         </div>
       </div>
-      <a href="#" id="scroll-to-top">
+      <a href="#" id="scroll-to-top" onClick={scrollToTop}>
         <i className="fas fa-arrow-up" id="scroll-icon"></i>
       </a>
     </footer>

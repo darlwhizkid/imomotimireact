@@ -1,0 +1,19 @@
+#countdown {
+  transition: background-color 0.3s ease;
+}
+  #countdown.dark-mode {
+    color: #ffffff !important;
+    transition: background-color 0.3s ease;
+  }
+#countdown.dark-mode .countdown-container {
+  background-color: #000000;
+}
+
+#countdown.dark-mode .countdown-title {
+  color: #ffffff;
+}
+#countdown.dark-mode .timer-item span,
+#countdown.dark-mode .timer-separator,
+#countdown.dark-mode .timer-label {
+  color: #ffffff;
+}

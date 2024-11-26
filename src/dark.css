@@ -1,0 +1,9 @@
+/* Dark theme styles */
+body {
+  background-color: #000000;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+/* Keep your existing dark theme styles */
+

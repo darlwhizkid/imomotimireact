@@ -83,20 +83,20 @@ body {
   #sunIcon {
       background: transparent !important;
   }
+  .dark {
+    --background-color: #333333;
+    --text-color: #ffffff;
+    /* Add other dark theme variables */
+    --primary-color: #1a1a1a;
+    --section-bg: #1e1e1e;
+    --border-color: #2d2d2d;
+  }
 
-.dark {
-  --primary-color: #1a1a1a;
-  --text-color: #ffffff;
-  --background-color: #121212;
-  --section-bg: #1e1e1e;
-  --border-color: #2d2d2d;
-}
+  body.dark {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
 
-.dark body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-.dark section {
-  background-color: var(--section-bg);
-}
+  .dark section {
+    background-color: var(--section-bg);
+  }

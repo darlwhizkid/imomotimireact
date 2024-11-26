@@ -1,0 +1,8 @@
+#notes {
+  transition: background-color 0.3s ease;
+}
+
+#notes.dark-mode {
+  background-color: #272621 !important;
+  color: #ffffff !important;
+}

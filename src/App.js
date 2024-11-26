@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { Helmet } from 'react-helmet'; 
 import Header from './components/Header';
 import Countdown from './components/Countdown';
 import Notes from './components/Notes';
@@ -10,36 +12,28 @@ import Footer from './components/Footer';
 import './App.css';
 import './assets/css/work.css';
 import './assets/css/light.css';
-import './assets/css/dark.css';
+// import './assets/css/dark.css';
 import './assets/Font Awesome/css/all.css';
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
-
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-  };
-
-  useEffect(() => {
-    if (isDark) {
-      document.body.classList.add('dark');
-      document.body.classList.remove('light,');
-    } else {
-      document.body.classList.add('light');
-      document.body.classList.remove('dark');
-    }
-  }, [isDark]);
-
   return (
-    <div className={`App ${isDark ? 'dark' : 'light'}`}>
-      <Header toggleTheme={toggleTheme} isDark={isDark} />
-      <Countdown />
-      <Notes />
-      <Location />
-      <Contact />
-      <Footer />
-    </div>
+    <ThemeProvider>
+      {/* Your app components */}
+      <div>
+        <Helmet>
+          <meta charSet='utf-8' />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="description" content="One Page Website" />
+          <title>One Page Website</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Helmet> 
+        <Header />
+        <Countdown />
+        <Notes />
+        <Location />
+        <Contact />
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
-}
-
-export default App;
+}export default App;

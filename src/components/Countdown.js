@@ -1,33 +1,49 @@
 import React, { useState, useEffect } from 'react';
+import { useTheme } from '../context/ThemeContext';
+import '../styles/countdown.css';
 
 const Countdown = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 29,
-    hours: 2,
-    minutes: 8,
-    seconds: 6
-  });
+  const targetDate = new Date('2024-12-01T00:00:00');
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const { darkMode } = useTheme();
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prevTime => {
-        // Add your countdown logic here
-        return {
-          days: prevTime.days,
-          hours: prevTime.hours,
-          minutes: prevTime.minutes,
-          seconds: prevTime.seconds - 1
-        };
-      });
-    }, 1000);
+    const updateCountdown = () => {
+      const now = new Date();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        clearInterval(timer);
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        setTimeLeft({ days, hours, minutes, seconds });
+      }
+    };
+
+    const timer = setInterval(updateCountdown, 1000);
+    updateCountdown();
 
     return () => clearInterval(timer);
-  }, []);
+  }, [targetDate]);
 
   return (
-    <section id="countdown">
+    <section 
+      id="countdown" 
+      className={darkMode ? 'dark-mode' : ''} 
+      style={{
+        backgroundColor: darkMode ? '#000000' : '#ffffff',
+        color: darkMode ? '#ffffff' : '#000000',
+      }}
+    >
       <div className="countdown-container">
-        <h1 className="countdown-title">Countdown to Audition</h1>
+        <h1 className="countdown-title">
+          Countdown to Audition
+        </h1>
         <div className="countdown-timer">
           <div className="timer-item">
             <span>{timeLeft.days}</span>
@@ -50,7 +66,11 @@ const Countdown = () => {
           </div>
         </div>
       </div>
-      <img src={process.env.PUBLIC_URL + '/assets/images/shape-top-grey-80.png'} alt="Decorative shape" className="wave-shape-bottom" />
+      <img 
+        src={process.env.PUBLIC_URL + `/assets/images/shape-top-${darkMode ? 'dark-' : ''}grey-80.png`} 
+        alt="Decorative shape" 
+        className="wave-shape-bottom" 
+      />
     </section>
   );
 };

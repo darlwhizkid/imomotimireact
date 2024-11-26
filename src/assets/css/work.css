@@ -220,7 +220,7 @@ h1 {
 
 .countdown-container {
     text-align: center;
-    padding: 64px 0;
+    padding: 70px 0 150px 0;
 }
 
 .countdown-title {
@@ -270,7 +270,7 @@ h1 {
 .notes-container {
     max-width: 72rem;
     margin: 0;
-    padding: 4rem 1rem;
+    padding: 8rem 1rem;
     background-color: #f6f4ee;
 }
 

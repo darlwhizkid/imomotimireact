@@ -1,9 +1,22 @@
 import React from 'react';
+import { useTheme } from '../context/ThemeContext';
 
 const Contact = () => {
+  const { darkMode } = useTheme();
+
+  const sectionStyle = {
+    backgroundColor: darkMode ? '#272621' : '#f6f4ee',
+    color: darkMode ? '#ffffff' : '#000000',
+  };
+
+  const containerStyle = {
+    backgroundColor: darkMode ? '#272621' : '#f6f4ee',
+    color: darkMode ? '#ffffff' : '#000000',
+  };
+
   return (
-    <section id="contact">
-      <div className="contact-container">
+    <section id="contact" style={sectionStyle}>
+      <div className="contact-container" style={containerStyle}>
         <div className="contact-info">
           <h1>For More Information:</h1>
           <p><strong>Hotlines:</strong> <span>07035973706 & 08108112759</span></p>
