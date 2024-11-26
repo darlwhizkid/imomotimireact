@@ -1,10 +1,23 @@
-import React from 'react';
-import './Footer.css'; // Import the CSS file for styling
+import React, { useEffect, useState } from 'react';
+import './Footer.css';
 
 const Footer = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
+
+  const handleScroll = () => {
+    setIsVisible(window.scrollY > 300); // Show button after scrolling down 300px
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <footer>
@@ -22,9 +35,11 @@ const Footer = () => {
           <p>© 2024 Imomotimi Foundation. All Rights Reserved.</p>
         </div>
       </div>
-      <a href="#" id="scroll-to-top" onClick={scrollToTop}>
-        <i className="fas fa-arrow-up" id="scroll-icon"></i>
-      </a>
+      {isVisible && (
+        <a href="#" id="scroll-to-top" onClick={scrollToTop}>
+          <i className="fas fa-arrow-up" id="scroll-icon"></i>
+        </a>
+      )}
     </footer>
   );
 };

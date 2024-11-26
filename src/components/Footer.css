@@ -1,19 +1,19 @@
 #scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #333; /* Background color */
-    color: white; /* Icon color */
-    border-radius: 50%; /* Circular button */
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: opacity 0.3s;
-    opacity: 0.7; /* Slightly transparent */
-  }
-  
+  position: fixed; 
+  bottom: 20px; 
+  right: 20px; 
+  background-color: #fff; /* Background color */
+  border: none; /* No border */
+  border-radius: 50%; /* Round shape */
+  padding: 10px; /* Some padding */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  cursor: pointer; /* Pointer cursor on hover */
+  display: none; /* Initially hidden */
+}
+
+#scroll-to-top.show {
+  display: block; /* Show when needed */
+}
   #scroll-to-top:hover {
     opacity: 1; /* Fully visible on hover */
   }

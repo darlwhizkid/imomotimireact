@@ -53,11 +53,36 @@ const Header = () => {
           className="logo" 
         />
         <nav>
-          <a href="#">Intro</a>
-          <a href="#">Countdown</a>
-          <a href="#">Notes</a>
-          <a href="#">Location</a>
-          <a href="#">Contact</a>
+          <a href="#intro" onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('intro').scrollIntoView({ 
+              behavior: 'smooth'
+            })
+          }}>Intro</a>
+          <a href="#countdown" onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('countdown').scrollIntoView({ 
+              behavior: 'smooth'
+            })
+          }}>Countdown</a>
+          <a href="#notes" onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('notes').scrollIntoView({ 
+              behavior: 'smooth'
+            })
+          }}>Notes</a>
+          <a href="#location" onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('location').scrollIntoView({ 
+              behavior: 'smooth'
+            })
+          }}>Location</a>
+          <a href="#contact" onClick={(e) => {
+            e.preventDefault()
+            document.getElementById('contact').scrollIntoView({ 
+              behavior: 'smooth'
+            })
+          }}>Contact</a>
         </nav>
         <div className="theme-toggle" onClick={toggleTheme} style={{ cursor: 'pointer' }}>
           {darkMode ? (

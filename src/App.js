@@ -7,6 +7,7 @@ import Notes from './components/Notes';
 import Location from './components/Location';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Intro from './components/Intro';
 
 // CSS imports
 import './App.css';
@@ -28,6 +29,7 @@ function App() {
           <link rel="icon" href="/favicon.ico" />
         </Helmet> 
         <Header />
+        <Intro />
         <Countdown />
         <Notes />
         <Location />
